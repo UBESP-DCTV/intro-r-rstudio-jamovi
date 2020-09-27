@@ -341,23 +341,23 @@ class: inverse
 
 # Risorse utili
 
-- **R internal help** (eg, `?lm`), also accessible from [**rdocumentation.org**](https://www.rdocumentation.org/)
+- **Help interno di R** (es: `?lm`), accessibile anche da [**rdocumentation.org**](https://www.rdocumentation.org/)
 
-- [**R 4 Data Science**](https://r4ds.had.co.nz/) free book by [**Hadley Wickham**](http://hadley.nz/), and [**Garrett Grolemund**](https://rstudio.com/speakers/garrett-grolemund/)
+- [**RStudio Cloud**](https://rstudio.cloud/spaces/92743/join?access_code=iHTM4ArP07a6hkcff8FKyJGCH%2BWw9pfhe9YCU0AQ) gratis (per te, studente) per esplorare RStudio, le sue funzionalità, e allenarti con R (link valido fino al 2020-10-04)
 
-- [**RStudio primers**](https://rstudio.cloud/learn/primers) (free
-  on-line environment to learning data science basics with interactive
-  tutorials)
+- [**RStudio primers**](https://rstudio.cloud/learn/primers) (ambiente on-line gratuito per l'apprendimento delle basi di analisi di dati con R tramite tutorial interattivi)
 
-- [**Jamovi** user's guide](https://www.jamovi.org/user-manual.html)
+- [**R 4 Data Science**](https://r4ds.had.co.nz/): libro gratuito (on-line) di [**Hadley Wickham**](http://hadley.nz/) e [**Garrett Grolemund**](https://rstudio.com/speakers/garrett-grolemund/)
 
-- [**Learning Statistics with JAMOVI**](https://www.learnstatswithjamovi.com/) free book by [**Danielle Navarro**](https://djnavarro.net/), and [David Foxcroft](https://www.davidfoxcroft.com/)
+- [Guida utente di **Jamovi**](https://www.jamovi.org/user-manual.html)
 
-<br>
+- [**Learning Statistics with JAMOVI**](https://www.learnstatswithjamovi.com/): libro gratuito (pdf) di [**Danielle Navarro**](https://djnavarro.net/) e [David Foxcroft](https://www.davidfoxcroft.com/)
 
-## Riconoscimenti
 
-<small><small>
+<small><small><small><small>
+
+### Riconoscimenti
+
 - Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 - Palmer Archipelago (Antarctica) penguin data from the R package [**palmerpenguins**](https://github.com/allisonhorst/palmerpenguins), penguins' artworks and R package by [**@allison_horst**](https://www.allisonhorst.com/).
 - Assessment created via the R package [**learnr**](https://rstudio.github.io/learnr/index.html) and published via [**ShinyApps.io**](https://www.shinyapps.io/) freely offered by [**RStudio**](https://rstudio.com/).
