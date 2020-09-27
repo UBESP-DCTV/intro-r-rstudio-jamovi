@@ -1,0 +1,13 @@
+name: intro-r-rstudio-jamovi-checks
+title: intro-r-rstudio-jamovi-checks
+username:
+account: corradolanera
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2898327
+bundleId: 3676855
+url: https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/
+when: 1601243624.71622
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: intro-r-rstudio-jamovi-checks.html

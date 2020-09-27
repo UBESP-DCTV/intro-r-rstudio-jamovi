@@ -1,0 +1,122 @@
+---
+title: "Raccogliere, gestire e analizzare dati"
+subtitle: "Verifica dei contenuti"
+author: "Corrado Lanera"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(parsons)
+library(tidyverse)
+library(palmerpenguins)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Istruzioni
+
+Puoi uscire e rientrare nel quiz quante volte vuoi, i tuoi progressi 
+verranno salvati. Per ricominciare dal principio (perdendo tutto lo 
+stato di avanzamento) puoi fare click sul pulsante `Start Over` in 
+fondo all'elenco delle sezioni a sinistra nella pagina.
+
+## R
+
+## RStudio
+
+## Jamovi
+
+
+### Ben fatto! {data-allow-skip=TRUE}
+
+Questo breve quiz è finito, ed è stato un successo!
+Congratulazioni!
+
+Ora hai a disposizione le conoscenze di base per poter iniziare a usare
+in autonomia i software R (tramite RStudio) e Jamovi.
+
+Se vuoi esplorare cosa puoi fare con R, qui sotto trovi uno spazio in 
+cui poter eseguire codice a tuo piacimento. I pacchetti `{tidyverse}`
+(che attiva tutte le funzioni utili per l'analisi di dati e la grafica
+avanzata di R) e `{palmerpenguins}` (che carica la base di dati `penguins` che abbiamo visto) sono già caricate per te!
+
+```{r base-explore, exercise=TRUE, exercise.lines=5}
+library(tidyverse)
+library(palmerpenguins)
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+```{r quiz-template, eval=FALSE, include=FALSE}
+quiz(caption = "Geom-quiz",
+  question("",
+           
+    answer("",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+```{r parsons-template, eval=FALSE, include=FALSE}
+question_parsons(
+  initial = c(
+    "iris",
+    "mutate(...)",
+    "summarize(...)",
+    "print()"
+  ),
+  pass_if(
+    c(
+      "iris",
+      "mutate(...)",
+      "summarize(...)"
+    )
+  ),
+  fail_if(
+    ~length(.) < 2,
+    message = "Include at least two answers"
+  ),
+  fail_if(
+    function(x){"print()" %in% x},
+    message = "You should not include print() in your answer"
+  ),
+  fail_if(
+    ~{.[1] != "iris"},
+    message = "Your solution should start with 'iris'"
+  )
+)
+```
+
+
