@@ -343,7 +343,7 @@ class: inverse
 
 - **R internal help** (eg, `?lm`), also accessible from [**rdocumentation.org**](https://www.rdocumentation.org/)
 
-- [**R 4 Data Science**](https://r4ds.had.co.nz/) book by [**Hadley Wickham**](http://hadley.nz/) and [**Garrett Grolemund**](https://rstudio.com/speakers/garrett-grolemund/)
+- [**R 4 Data Science**](https://r4ds.had.co.nz/) free book by [**Hadley Wickham**](http://hadley.nz/), and [**Garrett Grolemund**](https://rstudio.com/speakers/garrett-grolemund/)
 
 - [**RStudio primers**](https://rstudio.cloud/learn/primers) (free
   on-line environment to learning data science basics with interactive
@@ -351,12 +351,13 @@ class: inverse
 
 - [**Jamovi** user's guide](https://www.jamovi.org/user-manual.html)
 
-<br><br>
+- [**Learning Statistics with JAMOVI**](https://www.learnstatswithjamovi.com/) free book by [**Danielle Navarro**](https://djnavarro.net/), and [David Foxcroft](https://www.davidfoxcroft.com/)
 
+<br>
 
 ## Riconoscimenti
 
-<small>
+<small><small>
 - Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 - Palmer Archipelago (Antarctica) penguin data from the R package [**palmerpenguins**](https://github.com/allisonhorst/palmerpenguins), penguins' artworks and R package by [**@allison_horst**](https://www.allisonhorst.com/).
 - Assessment created via the R package [**learnr**](https://rstudio.github.io/learnr/index.html) and published via [**ShinyApps.io**](https://www.shinyapps.io/) freely offered by [**RStudio**](https://rstudio.com/).
@@ -394,7 +395,6 @@ class: inverse, center
 [`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
 [`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) | 
 [`r icon::fa("link")` slides](https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/) [intro-r-rstudio-jamovi](https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/)
-
 
 
 ???
