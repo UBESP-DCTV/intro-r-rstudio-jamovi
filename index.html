@@ -10,7 +10,7 @@
     <link href="index_files/xaringanExtra-clipboard-0.2.3.9000/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="index_files/xaringanExtra-clipboard-0.2.3.9000/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"e183ef0aa388463f93281bc286f8c8ad","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xac7202810a24aec819cb4ddc7177482","expires":1}</script>
     <script src="index_files/himalaya-1.1.0/himalaya.js"></script>
     <script src="index_files/js-cookie-3.0.0/js.cookie.js"></script>
     <link href="index_files/editable-0.2.3.9000/editable.css" rel="stylesheet" />
@@ -625,6 +625,10 @@ first_df$gender
 
 
 ---
+background-image: url(img/culmen_depth.png)
+background-position: 100% 0%
+background-size: 26%
+
 ## Pacchetti
 
 Un pacchetto di espansione di R è una collezione di funzioni e/o di 
@@ -639,8 +643,8 @@ volta che si ricomincia a lavorare.
 # installare nuovi pacchetti, cioè download, e memorizzazione in una
 # libreria di pacchetti nel computer. NON viene caricato un pacchetto
 # quando è installato!
-install.packages('tidyverse')      # funzioni per analisi di dati
-install.packages('palmerpenguins') # dati relativi a pinguini antartici
+# install.packages('tidyverse')      # funzioni per analisi di dati
+# install.packages('palmerpenguins') # dati relativi a pinguini antartici
 
 # caricare un pacchetto (che deve essere presente nol computer, cioè
 # installato) fa in modo di poter usare tutte le funzioni (o dati) al
@@ -651,7 +655,8 @@ library('palmerpenguins')
 penguins %&gt;% 
   ggplot(aes(
     x = bill_length_mm,
-    y = bill_depth_mm)) +
+    y = bill_depth_mm,
+    color = species)) +
   geom_point() +
   geom_smooth(method = lm)
 ```
@@ -674,7 +679,7 @@ Clicca [QUÌ](https://corradolanera.shinyapps.io/free-r/) &lt;sup&gt;\*&lt;/sup&
 per sperimentare in R quanto visto fin'ora.
 
 
-<div class="countdown" id="timer_5f71f0c2" style="bottom:50%;left:34%;" data-audio="true" data-warnwhen="1">
+<div class="countdown" id="timer_5f71f12b" style="bottom:50%;left:34%;" data-audio="true" data-warnwhen="1">
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -755,7 +760,7 @@ class: inverse, center
 Seguite il link messo nella chat, registratevi e accedete alla
 piattaforma cloud di RStudio.
 
-<div class="countdown" id="timer_5f71f1bb" style="bottom:50%;left:34%;" data-audio="true" data-warnwhen="1">
+<div class="countdown" id="timer_5f71f288" style="bottom:50%;left:34%;" data-audio="true" data-warnwhen="1">
 <code class="countdown-time"><span class="countdown-digits minutes">07</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -910,7 +915,7 @@ class: inverse, center
 
 So, congratulation to have finished this class, and thank you for you time and attention. Please, feel free to reach me on twitter or telegram for any further doubt.
 
-
+https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/
 
 
 

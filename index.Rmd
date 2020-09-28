@@ -644,6 +644,10 @@ knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
 
 
 ---
+background-image: url(img/culmen_depth.png)
+background-position: 100% 0%
+background-size: 26%
+
 ## Pacchetti
 
 Un pacchetto di espansione di R è una collezione di funzioni e/o di 
@@ -657,8 +661,8 @@ volta che si ricomincia a lavorare.
 # installare nuovi pacchetti, cioè download, e memorizzazione in una
 # libreria di pacchetti nel computer. NON viene caricato un pacchetto
 # quando è installato!
-install.packages('tidyverse')      # funzioni per analisi di dati
-install.packages('palmerpenguins') # dati relativi a pinguini antartici
+# install.packages('tidyverse')      # funzioni per analisi di dati
+# install.packages('palmerpenguins') # dati relativi a pinguini antartici
 
 # caricare un pacchetto (che deve essere presente nol computer, cioè
 # installato) fa in modo di poter usare tutte le funzioni (o dati) al
@@ -669,7 +673,8 @@ library('palmerpenguins')
 penguins %>% 
   ggplot(aes(
     x = bill_length_mm,
-    y = bill_depth_mm)) +
+    y = bill_depth_mm,
+    color = species)) +
   geom_point() +
   geom_smooth(method = lm)
 ```
