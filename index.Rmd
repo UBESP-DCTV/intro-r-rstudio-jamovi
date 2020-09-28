@@ -73,7 +73,7 @@ meta() %>%
   meta_social(
     title = "Raccogliere, gestire ed analizzare dati",
     url = "https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/",
-    image = "https://github.com/UBESP-DCTV/intro-r-rstudio-jamovi/raw/master/img/ubep.jpg",
+    image = "https://github.com/UBESP-DCTV/intro-r-rstudio-jamovi/raw/master/img/concept-map-14.PNG",
     og_type = "website",
     og_author = "UBEP",
     twitter_card_type = "summary",
@@ -334,6 +334,89 @@ class: inverse, middle, center
 # Panoramica
 
 ---
+
+<br>
+
+![](img/concept-map-1.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-2.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-3.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-4.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-5.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-6.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-7.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-8.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-9.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-10.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-11.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-12.PNG)
+
+---
+
+<br>
+
+![](img/concept-map-13.PNG)
+
+
+---
+
+<br>
+
+![](img/concept-map-14.PNG)
 
 
 
@@ -840,8 +923,9 @@ class: inverse, center
 
 # Congratulazioni!
 
-<br>
-
+```{r, out.width="70%", echo=FALSE}
+knitr::include_graphics("img/concept-map.gif")
+```
 
 # Grazie per l'attenzione!
 
@@ -858,7 +942,7 @@ class: inverse, center
 
 So, congratulation to have finished this class, and thank you for you time and attention. Please, feel free to reach me on twitter or telegram for any further doubt.
 
-
+https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/
 
 
 
