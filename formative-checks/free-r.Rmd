@@ -1,0 +1,361 @@
+---
+title: "Raccogliere, gestire e analizzare dati"
+subtitle: "Sperimenta l'uso di R"
+author: "Corrado Lanera"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(parsons)
+library(tidyverse)
+library(palmerpenguins)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+# Istruzioni
+
+Negli spazi qui sotto puoi eseguire codice R a tua scelta
+Sperimenta pure a tuo piacere.
+
+Una volta scritto del codice nella cella, premere il pulsante
+`> Run Code` per eseguirlo e vederne il risultato.
+
+
+Prova a eseguire (anche modificando) una o più delle istruzioni
+riportate nelle varie sezioni (riportate a sinistra, o navigandole con 
+i pulsalti `Next Topic` e `Previous Topic`). Esplorane altre a tuo 
+piacimento.
+
+Per ripristinare il contenuto originale di una cella, fare click sul
+pulsante `Start Over` della stessa.
+
+Se servono suggerimenti su che comandi poter esplorare in ciascuna
+sezione, premere il pulsante `Hint`.
+
+Facendo click su `Start Over` in fondo all'elenco delle
+sezioni a sinistra, tutto l'ambiente di lavoro verrà ripristinato e i
+progressi azzerati.
+
+
+## Algebra di base
+
+
+```{r algebra-hint, eval=FALSE}
+1 + 1    # sum
+1 - 2    # subtraction
+
+7 * 3    # product
+7 %/% 3  # quotient
+7 %% 3   # remainder
+3 / 4    # real division
+
+abs(-2) #<<
+
+3^2      # power #<<
+sqrt(9)  # squared root #<<
+
+round(2.5)
+round(3.5)
+trunc(3.5)
+
+max(7, 3, 2)
+min(7, 3, 2)
+prod(7, 3, 2)
+sum(7, 3, 2)
+```
+
+```{r algebra, exercise=TRUE, exercise.lines=5}
+1 + 1
+```
+
+
+## Vettori
+
+```{r vector-hint, eval=FALSE}
+c(1, 2, 3, 7) # concatenate
+
+1:7
+7:1
+
+seq_len(4)
+seq_along(c(1, 2, 3, 7))
+seq(from = 1, to = 8, by = 2)
+seq(from = 1, to = 8, length.out = 4)
+
+rep(2, 3)
+rep(c(1, 2, 3), 3)
+
+rev(c(1, 2, 3))
+```
+
+```{r vector, exercise=TRUE, exercise.lines=3}
+0:2
+```
+
+## Assegnamento
+
+```{r assignment-hint, eval=FALSE}
+head(first_vector)
+tail(first_vector)
+
+str(first_vector)
+
+second_vector <- first_vector * 2
+second_vector
+```
+
+```{r assignment, exercise=TRUE, exercise.lines=5}
+first_vector <- 1:10
+first_vector
+```
+
+
+## Logica
+
+```{r logic-hint, eval=FALSE}
+1 == 0
+1 != 0
+1 > 0
+1 < 0
+1 >= 1
+1 <= 0
+
+
+TRUE & FALSE
+TRUE | FALSE
+c(TRUE, TRUE) & FALSE
+c(TRUE, TRUE) | FALSE
+
+ttff <- c(TRUE, TRUE, FALSE, FALSE)
+tftf <- c(TRUE, FALSE, TRUE, FALSE)
+
+ttff & tftf
+ttff | tftf
+
+!TRUE
+!ttff
+
+all(ttff)
+any(ttff)
+
+which(c(1, 2, 3, 3, 2, 4) == 2)
+which(ttff)
+which(tftf)
+```
+
+```{r logic, exercise=TRUE, exercise.lines=3}
+1 == 0
+```
+
+
+
+
+## Fattori
+
+```{r factor-hint, eval=FALSE}
+levels(gender_factor)
+str(gender_factor)
+class(gender_factor)
+
+# I fattori si differiscono dai vettori di caratteri perchè memorizzano
+# i livelli!
+gender_character <- c('female', 'unknown', 'female')
+gender_character
+table(gender_character)
+
+
+# We can have also ordered factors
+patients_NYHA <- factor(
+    c('II', 'I', 'I', 'IV'),
+    levels  = c('I', 'II', 'III', 'IV'),
+    ordered = TRUE
+)
+patients_NYHA
+str(patients_NYHA)
+levels(patients_NYHA)
+table(patients_NYHA)
+```
+
+```{r factor, exercise=TRUE, exercise.lines=7}
+gender_factor <- factor(c('female', 'unknown', 'female'),
+  levels = c('female', 'male', 'unknown')
+)
+gender_factor
+table(gender_factor)
+```
+
+
+
+
+## Data Frames
+
+```{r df-hint, eval=FALSE}
+class(first_df)
+
+length(first_df) # number of columns
+names(first_df)
+
+dim(first_df)
+nrow(first_df)
+ncol(first_df)
+colnames(first_df)
+
+str(first_df)
+
+first_df[2] # singola quadra: selezione
+first_df["gender"]
+
+first_df[c(2, 4)] # singola quadra: selezione
+first_df[c("gender", "city")]
+
+first_df$gender
+first_df[["gender"]] # doppia quadra = contenuto (uno solo!)
+first_df[[2]]
+```
+
+```{r df, exercise=TRUE, exercise.lines=20}
+first_df <- data_frame(
+    id     = c(7L, 12L, 31L, 32L),
+    gender = factor(
+        c('m', 'm', 'f', 'm'),
+        levels = c('f', 'm', 'u')
+    ),
+    NYHA   = factor(
+        c('IV', 'I', 'II', 'II'),
+        levels  = c('I', 'II', 'III', 'IV'),
+        ordered = TRUE
+    ),
+    city   = c('Gorizia', 'Viterbo', 'Napoli', 'Roma'),
+    height = c(1.84, 1.70, 1.59, 1.90),
+    weight = c(85, 90, 71, 110)
+)
+
+first_df
+```
+
+
+
+
+
+
+
+
+## Pacchetti
+
+```{r pkg-hint, eval=FALSE}
+# overall negative relation
+penguins %>% 
+  ggplot(aes(
+    x = bill_length_mm,
+    y = bill_depth_mm)) +
+  geom_point() +
+  geom_smooth(method = lm)
+
+
+# by species: positive relation!!
+penguins %>% 
+  ggplot(aes(
+    x = bill_length_mm,
+    y = bill_depth_mm,
+    colour = species)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+
+```{r pkg, exercise=TRUE, exercise.lines=7}
+library(tidyverse)
+library(palmerpenguins)
+
+penguins
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r quiz-template, eval=FALSE, include=FALSE}
+quiz(caption = "Geom-quiz",
+  question("",
+           
+    answer("",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+```{r parsons-template, eval=FALSE, include=FALSE}
+question_parsons(
+  initial = c(
+    "iris",
+    "mutate(...)",
+    "summarize(...)",
+    "print()"
+  ),
+  pass_if(
+    c(
+      "iris",
+      "mutate(...)",
+      "summarize(...)"
+    )
+  ),
+  fail_if(
+    ~length(.) < 2,
+    message = "Include at least two answers"
+  ),
+  fail_if(
+    function(x){"print()" %in% x},
+    message = "You should not include print() in your answer"
+  ),
+  fail_if(
+    ~{.[1] != "iris"},
+    message = "Your solution should start with 'iris'"
+  )
+)
+```
+
+

@@ -328,6 +328,461 @@ a esplorarli e utilizzarli in autonomia.
 
 
 
+---
+class: inverse, middle, center
+
+# Panoramica
+
+---
+
+
+
+
+---
+class: inverse, middle, center
+
+```{r, echo=FALSE, out.width = "20%"}
+knitr::include_graphics(c("img/R_logo.png"))
+```
+
+
+
+---
+# Installazione
+
+## Go to: https://cloud.r-project.org/
+
+```{r, echo=FALSE}
+knitr::include_url("https://cloud.r-project.org/")
+```
+
+---
+# Basi di utilizzo
+
+## Semplice algebra
+
+In R possiamo operare tutte le operazioni algebriche di base, e anche di
+più! Ottimo quindi anche come calcolatrice potenziata!
+
+.left-code[
+```{r algebra, eval=FALSE}
+1 + 1  # sum
+
+7 * 3  # product
+
+abs(-2)  # absoulte value
+
+3^2  # power
+sqrt(9)  # squared root
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+
+
+
+
+
+
+
+---
+# Basi di utilizzo
+
+## Vettori
+
+La struttura base dei dati in R è il vettore: sequenze di numeri
+
+.left-code[
+```{r vectors, eval=FALSE}
+first_vector <- 1:1000
+first_vector
+
+# inspect some elements of a big object
+head(first_vector)
+tail(first_vector)
+
+# already seen
+str(first_vector)
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+
+
+
+
+---
+# Basi di utilizzo
+
+## Assegnamento
+
+Spesso può essere utile salvare il risultato di una operazione o della
+chiamata di una funzione in un oggetto (che chiamiamo **variabile**) a
+cui possiamo assegnare un nome.
+
+.left-code[
+```{r assignment, eval=FALSE}
+c(1, 2, 3, 7)  # concatenate
+
+1:7  # sequence
+
+seq_len(4)  # sequence
+
+rep(2, 3)  # replicate
+
+rev(c(1, 2, 3))  # reverse
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+---
+
+## Logica
+
+Possiamo anche fare operazioni con vettori logici `TRUE`/`FALSE`
+
+.left-code[
+```{r logic, eval=FALSE}
+1 == 0
+1 != 0
+1 > 0
+1 <= 0
+
+
+TRUE & FALSE
+TRUE | FALSE
+!TRUE
+
+which(c(1, 2, 3, 3, 2, 4) == 2)
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+
+---
+
+## Fattori
+
+Per rappresentare variabili categoriali, R mette a disposizione i
+**`factor`**.
+
+.left-code[
+```{r factor, eval=FALSE}
+gender_factor <- factor(
+  c('female', 'unknown', 'female'),
+  levels = c('female', 'male', 'unknown')
+)
+
+gender_factor
+levels(gender_factor)
+
+table(gender_factor)
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+
+---
+## Dataframe
+
+Per rappresentare basi di dati, la struttura tabellare in cui:
+- ogni riga è una osservazione (es: un paziente, o una visita)
+- ogni colonna è una variabile (es: il genere, o l'età)
+
+si chiama **`dataframe`** e lo costruiamo con la funzione `data.frame()`
+a cui passiamo le variabili di nostri interesse con il loro contenuto.
+
+.left-code[
+```{r df, eval=FALSE}
+first_df <- data.frame(
+  id     = c(7, 12, 31),
+  gender = factor(
+      c('m', 'm', 'f'),
+      levels = c('f', 'm', 'u')
+  ),
+  city   = c('Gorizia', 'Viterbo', 'Napoli'),
+  height = c(1.84, 1.70, 1.59),
+  weight = c(85, 90, 71)
+)
+
+first_df
+
+first_df["gender"]
+first_df[c("gender", "city")]
+
+first_df$gender
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+
+
+
+---
+## Pacchetti
+
+Un pacchetto di espansione di R è una collezione di funzioni e/o di 
+dati che possono essere "aggiunti" al proprio ambiente di lavoro.
+
+Si installano una sola volta (salvo aggiornamenti) ma si caricano ogni
+volta che si ricomincia a lavorare.
+
+.left-code[
+```{r pkgs, eval=FALSE}
+# installare nuovi pacchetti, cioè download, e memorizzazione in una
+# libreria di pacchetti nel computer. NON viene caricato un pacchetto
+# quando è installato!
+install.packages('tidyverse')      # funzioni per analisi di dati
+install.packages('palmerpenguins') # dati relativi a pinguini antartici
+
+# caricare un pacchetto (che deve essere presente nol computer, cioè
+# installato) fa in modo di poter usare tutte le funzioni (o dati) al
+# suo interno.
+library('tidyverse')
+library('palmerpenguins')
+
+penguins %>% 
+  ggplot(aes(
+    x = bill_length_mm,
+    y = bill_depth_mm)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+]
+
+.right-plot[
+
+```{r, echo=FALSE}
+knitr::include_app("https://corradolanera.shinyapps.io/pure-r/")
+```
+
+]
+
+
+
+---
+class: inverse, center
+
+# ---Your-Turn-->
+
+Clicca [QUÌ](https://corradolanera.shinyapps.io/free-r/) <sup>\*</sup>
+per sperimentare in R quanto visto fin'ora.
+
+
+```{r, echo = FALSE}
+countdown(minutes = 7, warn_when = 1, play_sound = TRUE,
+          left = "34%", bottom = "50%")
+```
+
+<br><br><br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<small><small><small>
+<sup>\*</sup> Se non hai accesso alle slide e non puoi cliccare "[QUÌ](https://corradolanera.shinyapps.io/free-r/)",
+visita: [https://corradolanera.shinyapps.io/free-r/](https://corradolanera.shinyapps.io/free-r/).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: inverse, middle, center
+
+```{r, echo=FALSE, out.width = "30%"}
+knitr::include_graphics(c("img/RStudio-Logo-Flat.png"))
+```
+
+
+
+---
+# Installazione
+
+## Go to: https://rstudio.com/products/rstudio/download/
+
+```{r, echo=FALSE}
+knitr::include_url("https://rstudio.com/products/rstudio/download/")
+```
+
+---
+# Example of Usage
+
+[**Quì**](https://rstudio.cloud/spaces/92743/projects) trovate un 
+ambiente di lavoro RStudio on-line, gratis per voi.
+
+<br><br><br><br>
+
+> ATTENZIONE: Non caricare dati sensibili!
+
+> NOTA: Poca potenza computazionale (usare per esplorazioni e studio, non per vere analisi)
+
+
+???
+
+- first live for new project!
+
+show 
+- console and R
+- editor: script, save
+- plot
+- report
+
+---
+class: inverse, center
+
+# ---Your-Turn-->
+
+Seguite il link messo nella chat, registratevi e accedete alla
+piattaforma cloud di RStudio.
+
+```{r, echo = FALSE}
+countdown(minutes = 7, warn_when = 1, play_sound = TRUE,
+          left = "34%", bottom = "50%")
+```
+
+<br><br><br><br>
+
+<small><small><small><small>Click the timer to start the countdown</small></small></small></small>
+
+???
+
+Into the to the chat:
+https://rstudio.cloud/spaces/92743/join?access_code=iHTM4ArP07a6hkcff8FKyJGCH%2BWw9pfhe9YCU0AQ
+
+- ricordare di provare a installarlo sui propri PC, provarlo da li e 
+  riportare eventuali problemi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: inverse, middle, center
+
+```{r, echo=FALSE, out.width = "30%"}
+knitr::include_graphics(c("img/jamovi-logo.svg"))
+```
+
+---
+# Installazione
+
+## Go to: https://www.jamovi.org/download.html
+
+```{r, echo=FALSE}
+knitr::include_url("https://www.jamovi.org/download.html")
+```
+
+---
+# Example of Usage
+
+> Live session
+
+---
+class: inverse, center
+
+# ---Your-Turn?-->
+
+Non possiamo fornire un ambiente cloud per Jamovi. Dopo averlo
+installato, provatelo ed esploratelo riportandoci i dubbi che potranno
+emergere.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -417,43 +872,43 @@ So, congratulation to have finished this class, and thank you for you time and a
 
 
 
----
-class: inverse, center
+<!-- --- -->
+<!-- class: inverse, center -->
 
-# ---Tocca-a-Voi-->
+<!-- # ---Tocca-a-Voi--> -->
 
-Clicca [QUÌ](https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/) <sup>\*</sup>
-per testare le tue nuove conoscenze su **R**, **RStudio**, e **Jamovi**.
-
-
-
-
-# Grazie per l'attenzione!
-
-[`r icon::fa("envelope")`](mailto:corrado.lanera@unipd.it) [corrado.lanera@unipd.it](mailto:corrado.lanera@unipd.it)
-
-[`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) | 
-[`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) | 
-[`r icon::fa("link")` slides](https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/) [intro-r-rstudio-jamovi](https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/)
+<!-- Clicca [QUÌ](https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/) <sup>\*</sup> -->
+<!-- per testare le tue nuove conoscenze su **R**, **RStudio**, e **Jamovi**. -->
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br>
 
-<small><small><small>
-<sup>\*</sup> Se non hai accesso alle slide e non puoi cliccare "[QUÌ](https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/)",
-visita: [https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/](https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/).
+<!-- # Grazie per l'attenzione! -->
 
-???
+<!-- [`r icon::fa("envelope")`](mailto:corrado.lanera@unipd.it) [corrado.lanera@unipd.it](mailto:corrado.lanera@unipd.it) -->
+
+<!-- [`r icon::fa("twitter")`](https://twitter.com/corradolanera) [@CorradoLanera](https://twitter.com/corradolanera) |  -->
+<!-- [`r icon::fa("telegram-plane")`](https://telegram.me/CorradoLanera) [@CorradoLanera](https://telegram.me/CorradoLanera) |  -->
+<!-- [`r icon::fa("link")` slides](https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/) [intro-r-rstudio-jamovi](https://ubesp-dctv.github.io/intro-r-rstudio-jamovi/) -->
 
 
-With this I have conclude my lesson, thank you again, and have a lovely day. 
 
-Grazie!!
+<!-- <br><br><br><br><br><br><br><br><br><br><br> -->
 
-> Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/
+<!-- <small><small><small> -->
+<!-- <sup>\*</sup> Se non hai accesso alle slide e non puoi cliccare "[QUÌ](https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/)", -->
+<!-- visita: [https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/](https://corradolanera.shinyapps.io/intro-r-rstudio-jamovi-checks/). -->
 
-> if 1-5 work together, if 6+ breakout room or grops if in person
+<!-- ??? -->
+
+
+<!-- With this I have conclude my lesson, thank you again, and have a lovely day.  -->
+
+<!-- Grazie!! -->
+
+<!-- > Provide the link of the slide on the chat, or on the blackboard: https://corradolanera.github.io/rs-teaching-exam/ -->
+
+<!-- > if 1-5 work together, if 6+ breakout room or grops if in person -->
 
 
 

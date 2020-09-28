@@ -1,0 +1,90 @@
+---
+title: "Explore R"
+author: "Corrado Lanera"
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(parsons)
+library(tidyverse)
+library(palmerpenguins)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r algebra, exercise=TRUE, exercise.lines=5}
+
+```
+
+
+
+
+
+
+
+
+
+
+```{r quiz-template, eval=FALSE, include=FALSE}
+quiz(caption = "Geom-quiz",
+  question("",
+           
+    answer("",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+
+
+```{r parsons-template, eval=FALSE, include=FALSE}
+question_parsons(
+  initial = c(
+    "iris",
+    "mutate(...)",
+    "summarize(...)",
+    "print()"
+  ),
+  pass_if(
+    c(
+      "iris",
+      "mutate(...)",
+      "summarize(...)"
+    )
+  ),
+  fail_if(
+    ~length(.) < 2,
+    message = "Include at least two answers"
+  ),
+  fail_if(
+    function(x){"print()" %in% x},
+    message = "You should not include print() in your answer"
+  ),
+  fail_if(
+    ~{.[1] != "iris"},
+    message = "Your solution should start with 'iris'"
+  )
+)
+```
+
+

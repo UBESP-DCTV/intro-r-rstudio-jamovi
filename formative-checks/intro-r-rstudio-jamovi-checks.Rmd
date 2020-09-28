@@ -28,6 +28,30 @@ fondo all'elenco delle sezioni a sinistra nella pagina.
 
 ## R
 
+```{r quiz-r-1}
+quiz(caption = "R quiz 1",
+  question("Cos'è R?",
+           
+    answer("Un linguaggio di programmazione per la statistica",
+           correct = TRUE,
+           message = random_praise()),
+    
+    answer("Un modo abbreviato diffuso per chiamare RStudio",
+           message = "R è un linguaggio di programmazione specializzato per analisi statistiche e di dati. RStudio è invece un ambiente di lavoro per operare agilmente con R"),
+    
+    answer("",
+           message = ""),
+    
+    answer("",
+           message = ""),
+    
+    try_again = random_encouragement(),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
 ## RStudio
 
 ## Jamovi
@@ -42,14 +66,9 @@ Ora hai a disposizione le conoscenze di base per poter iniziare a usare
 in autonomia i software R (tramite RStudio) e Jamovi.
 
 Se vuoi esplorare cosa puoi fare con R, qui sotto trovi uno spazio in 
-cui poter eseguire codice a tuo piacimento. I pacchetti `{tidyverse}`
-(che attiva tutte le funzioni utili per l'analisi di dati e la grafica
-avanzata di R) e `{palmerpenguins}` (che carica la base di dati `penguins` che abbiamo visto) sono già caricate per te!
+cui poter eseguire codice a tuo piacimento. 
 
 ```{r base-explore, exercise=TRUE, exercise.lines=5}
-library(tidyverse)
-library(palmerpenguins)
-
 
 
 ```

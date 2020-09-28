@@ -1,0 +1,13 @@
+name: free-r
+title: free-r
+username:
+account: corradolanera
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2900439
+bundleId: 3678418
+url: https://corradolanera.shinyapps.io/free-r/
+when: 1601288575.55048
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: free-r.html|intro-r-rstudio-jamovi-checks.html|intro-r-rstudio-jamovi-checks.Rmd|pure-r.html|pure-r.Rmd
