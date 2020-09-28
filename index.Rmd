@@ -484,15 +484,15 @@ La struttura base dei dati in R è il vettore: sequenze di numeri
 
 .left-code[
 ```{r vectors, eval=FALSE}
-first_vector <- 1:1000
-first_vector
+c(1, 2, 3, 7)  # concatenate
 
-# inspect some elements of a big object
-head(first_vector)
-tail(first_vector)
+1:7  # sequence
 
-# already seen
-str(first_vector)
+seq_len(4)  # sequence
+
+rep(2, 3)  # replicate
+
+rev(c(1, 2, 3))  # reverse
 ```
 ]
 
@@ -519,15 +519,15 @@ cui possiamo assegnare un nome.
 
 .left-code[
 ```{r assignment, eval=FALSE}
-c(1, 2, 3, 7)  # concatenate
+first_vector <- 1:1000
+first_vector
 
-1:7  # sequence
+# inspect some elements of a big object
+head(first_vector)
+tail(first_vector)
 
-seq_len(4)  # sequence
-
-rep(2, 3)  # replicate
-
-rev(c(1, 2, 3))  # reverse
+# already seen
+str(first_vector)
 ```
 ]
 
